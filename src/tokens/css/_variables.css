@@ -1,0 +1,57 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 25 Aug 2024 18:14:10 GMT
+ */
+
+
+
+:root {
+  --tokens-color-primary-black-100: #232222;
+  --tokens-color-primary-white-100: #F2F0F0;
+  --background-color-dark: var(--tokens-color-primary-black-100);
+  --background-color-light: var(--tokens-color-primary-white-100);
+  --text-color-dark: var(--tokens-color-primary-black-100);
+  --text-color-light: var(--tokens-color-primary-white-100);
+  --spacing-spacing-0: 0rem;
+  --spacing-spacing-1: 0.625rem;
+  --spacing-spacing-2: 1.25rem;
+  --spacing-spacing-3: 1.875rem;
+  --spacing-spacing-4: 2.5rem;
+  --spacing-spacing-5: 3.125rem;
+  --spacing-spacing-6: 3.75rem;
+  --spacing-spacing-7: 4.375rem;
+  --spacing-spacing-8: 5rem;
+  --spacing-spacing-9: 5.625rem;
+  --spacing-spacing-10: 6.25rem;
+  --h1-heading-main-font-family: Luminova;
+  --h1-heading-main-font-weight: 500;
+  --h1-heading-main-line-height: 95%;
+  --h1-heading-main-font-size: 8vw;
+  --h1-heading-main-letter-spacing: 0;
+  --h1-heading-main-text-decoration: none;
+  --h1-heading-main-text-case: uppercase;
+  --h2-heading-main-font-family: Luminova;
+  --h2-heading-main-font-weight: 400;
+  --h2-heading-main-line-height: 95%;
+  --h2-heading-main-font-size: 4vw;
+  --h2-heading-main-letter-spacing: 0;
+  --h2-heading-main-text-decoration: none;
+  --h2-heading-main-text-case: uppercase;
+  --h3-heading-main-font-family: Luminova;
+  --h3-heading-main-font-weight: 400;
+  --h3-heading-main-line-height: 100%;
+  --h3-heading-main-font-size: 2vw;
+  --h3-heading-main-letter-spacing: 0;
+  --h3-heading-main-text-decoration: none;
+  --h3-heading-main-text-case: uppercase;
+  --body-font-family: Luminova;
+  --body-font-weight: 400;
+  --body-font-size: 1.3vw;
+  --body-letter-spacing: 0;
+  --body-text-case: uppercase;
+  --note-font-family: Luminova;
+  --note-font-weight: 400;
+  --note-font-size: 1.2vw;
+  --note-letter-spacing: 0;
+  --note-text-case: uppercase;
+}
