@@ -1,7 +1,9 @@
 @import url("https://fonts.cdnfonts.com/css/luminova");
+@import url("https://fonts.cdnfonts.com/css/malonet");
 
 html,
 body {
+  background-color: #f2f0f0;
   margin: 0;
   padding: 0;
   height: 100vh;
