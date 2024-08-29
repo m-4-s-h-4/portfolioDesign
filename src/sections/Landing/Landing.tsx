@@ -23,7 +23,7 @@ const headingStyle: React.CSSProperties = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   mixBlendMode: "difference",
-  zIndex: 20, // Ensures the heading is above other elements
+  zIndex: 20,
 };
 
 export default Landing;

@@ -1,6 +1,5 @@
 import React from "react";
 import Heading from "../../components/base components/TypographyComponents/Heading/Heading";
-import Grid from "../../components/base components/LayoutComponents/Grid/Grid";
 import Category from "../../components/work components/Category/Category";
 import Flex from "../../components/base components/LayoutComponents/Flex/Flex";
 import Container from "../../components/base components/Container/Container";
@@ -16,7 +15,7 @@ const Work: React.FC = () => {
           yAlign="center"
           gap="SpacingSpacing2"
         >
-          <Heading level="h3" color="dark" align="center">
+          <Heading level="h4" color="dark" align="center">
             work
           </Heading>
           <Category />

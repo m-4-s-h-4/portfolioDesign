@@ -71,8 +71,8 @@ const circleContainerStyle: CSSProperties = {
 
 const centralCircleStyle: CSSProperties = {
   position: "absolute",
-  width: "17vmin",
-  height: "17vmin",
+  width: "29vmin",
+  height: "29vmin",
   borderRadius: "50%",
   backgroundImage:
     "linear-gradient(180deg, rgba(255,27,9,1) 0%, rgba(255,27,9,0) 100%)",
