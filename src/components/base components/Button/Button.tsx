@@ -29,7 +29,7 @@ const StyledButton = styled(Box)`
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
   return (
     <StyledButton onClick={onClick}>
-      <Heading level={"h3"}>{text}</Heading>
+      <Heading level={"h4"}>{text}</Heading>
     </StyledButton>
   );
 };
