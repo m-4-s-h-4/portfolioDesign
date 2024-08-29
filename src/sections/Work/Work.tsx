@@ -1,39 +1,58 @@
 import React from "react";
 import Heading from "../../components/base components/TypographyComponents/Heading/Heading";
 import Grid from "../../components/base components/LayoutComponents/Grid/Grid";
+import Category from "../../components/work components/Category/Category";
+import Flex from "../../components/base components/LayoutComponents/Flex/Flex";
+import Container from "../../components/base components/Container/Container";
+import ImagesLayout from "../../components/media components/ImagesLayout/ImagesLayout";
 
 const Work: React.FC = () => {
   return (
     <>
-      <Heading level="h1" color="dark" align="center">
-        work
-      </Heading>
-      <Grid>
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 1"
-        />
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 2"
-        />
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 3"
-        />
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 4"
-        />
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 5"
-        />
-        <img
-          src="https://assets.awwwards.com/awards/external/2021/11/6197a9da23509307848534_static.jpeg"
-          alt="Placeholder 6"
-        />
-      </Grid>
+      <Container paddingLeftRight="SpacingSpacing2">
+        <Flex
+          direction="row"
+          xAlign="space-between"
+          yAlign="center"
+          gap="SpacingSpacing2"
+        >
+          <Heading level="h3" color="dark" align="center">
+            work
+          </Heading>
+          <Category />
+        </Flex>
+      </Container>
+      <Container
+        paddingLeftRight="SpacingSpacing1"
+        paddingTopBottom="SpacingSpacing1"
+      >
+        <ImagesLayout variant="variant1">
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 1"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 2"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 3"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 1"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 2"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/616d317372b9aa82983a918f/61f29b802ac9c2f4d3c0d440_Frame_5.webp"
+            alt="Image 3"
+          />
+        </ImagesLayout>
+      </Container>
     </>
   );
 };
