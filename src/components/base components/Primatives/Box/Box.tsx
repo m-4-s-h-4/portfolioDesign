@@ -14,7 +14,7 @@ interface BoxProps {
   alignItems?: "flex-start" | "flex-end" | "center" | "stretch";
   justifyContent?: "flex-start" | "flex-end" | "center";
   height?: string;
-  borderPosition?: "top" | "bottom";
+  borderRadius?: string;
 }
 
 const Box = styled.div<BoxProps>`
@@ -30,10 +30,10 @@ const Box = styled.div<BoxProps>`
     spacingMap[props.paddingRight || "SpacingSpacing0"]};
   box-sizing: border-box;
   overflow: hidden;
-
   display: ${(props) => (props.displayFlex ? "flex" : "block")};
   align-items: ${(props) => props.alignItems || "stretch"};
   justify-content: ${(props) => props.justifyContent || "flex-start"};
+  border-radius: ${(props) => props.borderRadius || "0"}; // Border radius added
 `;
 
 export default Box;
