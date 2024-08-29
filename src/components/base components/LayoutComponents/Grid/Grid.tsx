@@ -58,16 +58,16 @@ const GridItem = styled(Box)<{ area: string }>`
   grid-area: ${(props) => props.area};
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   > * {
     width: 100%;
-    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   img {
