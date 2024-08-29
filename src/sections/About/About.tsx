@@ -15,9 +15,8 @@ const About: React.FC = () => {
           yAlign="center"
           gap="SpacingSpacing2"
         >
-          {" "}
           <Heading
-            level="h3"
+            level="h4"
             color="dark"
             align="center"
             paddingLeft="SpacingSpacing20"
