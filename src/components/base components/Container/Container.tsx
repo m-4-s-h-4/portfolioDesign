@@ -11,6 +11,7 @@ export interface ContainerProps {
   backgroundColor?: "dark" | "light";
   height?: "auto" | "100vh" | "50vh" | "25vh";
   paddingTopBottom?: keyof typeof spacingMap;
+  paddingLeftRight?: keyof typeof spacingMap;
   direction?: "row" | "column";
   children: React.ReactNode;
 }
@@ -19,6 +20,7 @@ const StyledContainer = styled(Box)<{
   bgColor: string;
   containerHeight: string;
   paddingTopBottom: string;
+  paddingLeftRight: string;
   flexDirection: string;
 }>`
   height: ${(props) => props.containerHeight};
@@ -29,24 +31,29 @@ const StyledContainer = styled(Box)<{
   align-items: stretch;
   padding-top: ${(props) => props.paddingTopBottom};
   padding-bottom: ${(props) => props.paddingTopBottom};
+  padding-left: ${(props) => props.paddingLeftRight};
+  padding-right: ${(props) => props.paddingLeftRight};
 `;
 
 const Container: React.FC<ContainerProps> = ({
   backgroundColor = "light",
   height = "auto",
   paddingTopBottom = "SpacingSpacing0",
+  paddingLeftRight = "SpacingSpacing0",
   direction = "column",
   children,
 }) => {
   const bgColor =
     backgroundColor === "dark" ? BackgroundColorDark : BackgroundColorLight;
-  const paddingValue = spacingMap[paddingTopBottom];
+  const paddingTopBottomValue = spacingMap[paddingTopBottom];
+  const paddingLeftRightValue = spacingMap[paddingLeftRight];
 
   return (
     <StyledContainer
       bgColor={bgColor}
       containerHeight={height}
-      paddingTopBottom={paddingValue}
+      paddingTopBottom={paddingTopBottomValue}
+      paddingLeftRight={paddingLeftRightValue}
       flexDirection={direction}
     >
       {children}
