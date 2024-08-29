@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles";
 
 type TextProps<
-  T extends keyof JSX.IntrinsicElements | "h1" | "h2" | "h3" | "body" | "note",
+  T extends
+    | keyof JSX.IntrinsicElements
+    | "display"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "body"
+    | "note",
 > = {
   as?: T;
   style?: React.CSSProperties;
@@ -15,7 +22,14 @@ type TextProps<
 >;
 
 const Text = <
-  T extends keyof JSX.IntrinsicElements | "h1" | "h2" | "h3" | "body" | "note",
+  T extends
+    | keyof JSX.IntrinsicElements
+    | "display"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "body"
+    | "note",
 >({
   as,
   children,
@@ -37,6 +51,8 @@ const Text = <
 
   const getComponent = (type: T | undefined): React.ElementType => {
     switch (type) {
+      case "display":
+        return "h1";
       case "h1":
         return "h1";
       case "h2":
@@ -44,6 +60,7 @@ const Text = <
       case "h3":
         return "h3";
       case "body":
+        return "p";
       case "note":
         return "p";
       default:
@@ -56,6 +73,8 @@ const Text = <
     let mediaStyle: React.CSSProperties = {};
 
     if (isSmallScreen) {
+      if (as === "display") {
+      }
       switch (as) {
         case "h2":
           mediaStyle.fontSize = "8vw";

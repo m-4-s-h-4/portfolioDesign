@@ -1,4 +1,11 @@
 import {
+  DisplayHeadingMainFontFamily,
+  DisplayHeadingMainFontWeight,
+  DisplayHeadingMainLineHeight,
+  DisplayHeadingMainFontSize,
+  DisplayHeadingMainLetterSpacing,
+  DisplayHeadingMainTextDecoration,
+  DisplayHeadingMainTextCase,
   H1HeadingMainFontFamily,
   H1HeadingMainFontWeight,
   H1HeadingMainLineHeight,
@@ -32,6 +39,17 @@ import {
 } from "../../../../tokens/js/variables";
 
 const styles: Record<string, React.CSSProperties> = {
+  display: {
+    margin: 0,
+    fontFamily: DisplayHeadingMainFontFamily,
+    fontWeight: DisplayHeadingMainFontWeight,
+    lineHeight: DisplayHeadingMainLineHeight,
+    fontSize: DisplayHeadingMainFontSize,
+    letterSpacing: DisplayHeadingMainLetterSpacing,
+    textDecoration: DisplayHeadingMainTextDecoration,
+    textTransform:
+      DisplayHeadingMainTextCase as React.CSSProperties["textTransform"],
+  },
   h1: {
     margin: 0,
     fontFamily: H1HeadingMainFontFamily,

@@ -3,7 +3,7 @@ import Text from "../../Primatives/Text/Text";
 import { TextColorDark, TextColorLight } from "../../../../tokens/js/variables";
 import { spacingMap } from "../../../../utils/spacingMap";
 
-type HeadingLevel = "h1" | "h2" | "h3";
+type HeadingLevel = "display" | "h1" | "h2" | "h3";
 
 export interface HeadingProps {
   level: HeadingLevel;

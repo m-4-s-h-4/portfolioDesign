@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 25 Aug 2024 18:14:10 GMT
+ * Generated on Thu, 29 Aug 2024 12:16:21 GMT
  */
 
 
@@ -22,6 +22,14 @@ export const SpacingSpacing7 = "4.375rem";
 export const SpacingSpacing8 = "5rem";
 export const SpacingSpacing9 = "5.625rem";
 export const SpacingSpacing10 = "6.25rem";
+export const SpacingSpacing20 = "12.25rem";
+export const DisplayHeadingMainFontFamily = "Luminova";
+export const DisplayHeadingMainFontWeight = "500";
+export const DisplayHeadingMainLineHeight = "95%";
+export const DisplayHeadingMainFontSize = "18vw";
+export const DisplayHeadingMainLetterSpacing = "0";
+export const DisplayHeadingMainTextDecoration = "none";
+export const DisplayHeadingMainTextCase = "uppercase";
 export const H1HeadingMainFontFamily = "Luminova";
 export const H1HeadingMainFontWeight = "500";
 export const H1HeadingMainLineHeight = "95%";

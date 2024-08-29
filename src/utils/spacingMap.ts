@@ -10,6 +10,7 @@ import {
   SpacingSpacing8,
   SpacingSpacing9,
   SpacingSpacing10,
+  SpacingSpacing20,
 } from "../tokens/js/variables";
 
 export const spacingMap: { [key: string]: string } = {
@@ -24,4 +25,5 @@ export const spacingMap: { [key: string]: string } = {
   SpacingSpacing8,
   SpacingSpacing9,
   SpacingSpacing10,
+  SpacingSpacing20,
 };
