@@ -3,12 +3,12 @@ import Text from "../../Primatives/Text/Text";
 import { TextColorDark, TextColorLight } from "../../../../tokens/js/variables";
 import { spacingMap } from "../../../../utils/spacingMap";
 
-type HeadingLevel = "display" | "h1" | "h2" | "h3";
+type HeadingLevel = "display" | "h1" | "h2" | "h3" | "h4";
 
 export interface HeadingProps {
   level: HeadingLevel;
   color?: "dark" | "light";
-  align?: "center";
+  align?: "center" | "left";
   paddingTop?: keyof typeof spacingMap;
   paddingBottom?: keyof typeof spacingMap;
   paddingLeft?: keyof typeof spacingMap;
@@ -25,7 +25,7 @@ const colorMap = {
 const Heading: React.FC<HeadingProps> = ({
   level,
   color = "dark",
-  align,
+  align = "left",
   paddingTop = "SpacingSpacing0",
   paddingBottom = "SpacingSpacing0",
   paddingLeft = "SpacingSpacing0",
