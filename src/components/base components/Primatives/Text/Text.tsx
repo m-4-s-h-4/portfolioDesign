@@ -8,6 +8,7 @@ type TextProps<
     | "h1"
     | "h2"
     | "h3"
+    | "h4"
     | "body"
     | "note",
 > = {
@@ -28,6 +29,7 @@ const Text = <
     | "h1"
     | "h2"
     | "h3"
+    | "h4"
     | "body"
     | "note",
 >({
@@ -59,6 +61,8 @@ const Text = <
         return "h2";
       case "h3":
         return "h3";
+      case "h4":
+        return "h4";
       case "body":
         return "p";
       case "note":

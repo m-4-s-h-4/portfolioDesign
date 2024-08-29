@@ -36,6 +36,12 @@ import {
   NoteFontWeight,
   NoteFontSize,
   NoteLetterSpacing,
+  H4HeadingMainFontFamily,
+  H4HeadingMainFontSize,
+  H4HeadingMainFontWeight,
+  H4HeadingMainLetterSpacing,
+  H4HeadingMainLineHeight,
+  H4HeadingMainTextDecoration,
 } from "../../../../tokens/js/variables";
 
 const styles: Record<string, React.CSSProperties> = {
@@ -80,6 +86,17 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: H3HeadingMainFontSize,
     letterSpacing: H3HeadingMainLetterSpacing,
     textDecoration: H3HeadingMainTextDecoration,
+    textTransform:
+      H3HeadingMainTextCase as React.CSSProperties["textTransform"],
+  },
+  h4: {
+    margin: 0,
+    fontFamily: H4HeadingMainFontFamily,
+    fontWeight: H4HeadingMainFontWeight,
+    lineHeight: H4HeadingMainLineHeight,
+    fontSize: H4HeadingMainFontSize,
+    letterSpacing: H4HeadingMainLetterSpacing,
+    textDecoration: H4HeadingMainTextDecoration,
     textTransform:
       H3HeadingMainTextCase as React.CSSProperties["textTransform"],
   },

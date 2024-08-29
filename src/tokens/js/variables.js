@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 29 Aug 2024 12:16:21 GMT
+ * Generated on Thu, 29 Aug 2024 14:27:49 GMT
  */
 
 
@@ -47,10 +47,17 @@ export const H2HeadingMainTextCase = "uppercase";
 export const H3HeadingMainFontFamily = "Luminova";
 export const H3HeadingMainFontWeight = "400";
 export const H3HeadingMainLineHeight = "100%";
-export const H3HeadingMainFontSize = "2vw";
+export const H3HeadingMainFontSize = "3vw";
 export const H3HeadingMainLetterSpacing = "0";
 export const H3HeadingMainTextDecoration = "none";
 export const H3HeadingMainTextCase = "uppercase";
+export const H4HeadingMainFontFamily = "Luminova";
+export const H4HeadingMainFontWeight = "400";
+export const H4HeadingMainLineHeight = "100%";
+export const H4HeadingMainFontSize = "2vw";
+export const H4HeadingMainLetterSpacing = "0";
+export const H4HeadingMainTextDecoration = "none";
+export const H4HeadingMainTextCase = "uppercase";
 export const BodyFontFamily = "Luminova";
 export const BodyFontWeight = "400";
 export const BodyFontSize = "1.3vw";
