@@ -18,7 +18,6 @@ const StackContainer = styled(Box)<StackProps>`
   display: flex;
   flex-direction: ${(props) => directionMap[props.direction || "vertical"]};
   gap: ${(props) => spacingMap[props.gap || "SpacingSpacing0"]};
-  overflow: hidden;
 `;
 
 const Stack: React.FC<React.PropsWithChildren<StackProps>> = ({
