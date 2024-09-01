@@ -31,7 +31,7 @@ const renderers = {
     paragraphText,
   }: Pick<TextLayoutProps, "headingText" | "paragraphText">) => (
     <Grid variant="variant4">
-      <Heading level="h3" color="dark">
+      <Heading level="h2" color="dark">
         {headingText}
       </Heading>
       <Paragraph align="left" color="dark">
@@ -57,7 +57,7 @@ const renderers = {
     <Grid variant="variant2">
       {paragraphs?.map((text, index) => (
         <Stack key={index} direction="vertical" gap="SpacingSpacing2">
-          <Heading level="h4" color="dark">
+          <Heading level="h3" color="dark">
             {headings?.[index] || `Heading ${index + 1}`}
           </Heading>
           <Paragraph align="left" color="dark">
@@ -72,7 +72,7 @@ const renderers = {
 const TextLayout: React.FC<TextLayoutProps> = (props) => {
   const {
     variant,
-    paddingTopBottom = "SpacingSpacing4", // Default padding for top and bottom
+    paddingTopBottom = "SpacingSpacing2", // Default padding for top and bottom
   } = props;
 
   const paddingTopBottomValue = spacingMap[paddingTopBottom];

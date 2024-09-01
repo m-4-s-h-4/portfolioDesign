@@ -38,7 +38,7 @@ const renderers = {
   >) => (
     <Grid variant="variant4">
       <Stack direction="vertical" gap="SpacingSpacing2">
-        <Heading level="h3" color="dark">
+        <Heading level="h2" color="dark">
           {headingText}
         </Heading>
         <Paragraph align="left" color="dark">
@@ -59,7 +59,7 @@ const renderers = {
   >) => (
     <Grid variant="variant5">
       <Stack direction="vertical" gap="SpacingSpacing2">
-        <Heading level="h3" color="dark">
+        <Heading level="h2" color="dark">
           {headingText}
         </Heading>
         <Paragraph align="left" color="dark">
@@ -74,7 +74,7 @@ const renderers = {
 const TextWithMedia: React.FC<TextWithMediaProps> = (props) => {
   const {
     variant,
-    paddingTopBottom = "SpacingSpacing4", // Default padding for top and bottom
+    paddingTopBottom = "SpacingSpacing2", // Default padding for top and bottom
   } = props;
 
   const paddingTopBottomValue = spacingMap[paddingTopBottom];
