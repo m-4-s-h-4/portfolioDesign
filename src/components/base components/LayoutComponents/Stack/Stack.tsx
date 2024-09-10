@@ -20,16 +20,14 @@ const StackContainer = styled(Box)<StackProps>`
   gap: ${(props) => spacingMap[props.gap || "SpacingSpacing0"]};
 `;
 
-const Stack: React.FC<React.PropsWithChildren<StackProps>> = ({
-  direction = "vertical",
-  gap = "SpacingSpacing0",
-  children,
-}) => {
-  return (
-    <StackContainer direction={direction} gap={gap}>
-      {children}
-    </StackContainer>
-  );
-};
+const Stack = React.forwardRef<HTMLDivElement, StackProps>(
+  ({ direction = "vertical", gap = "SpacingSpacing0", children }, ref) => {
+    return (
+      <StackContainer direction={direction} gap={gap} ref={ref}>
+        {children}
+      </StackContainer>
+    );
+  }
+);
 
 export default Stack;

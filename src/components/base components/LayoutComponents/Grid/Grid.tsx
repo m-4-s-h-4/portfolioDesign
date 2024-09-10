@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Box from "../../Primatives/Box/Box";
+import { spacingMap } from "../../../../utils/spacingMap";
 
 export interface GridProps {
   variant?:
@@ -10,10 +11,11 @@ export interface GridProps {
     | "variant4"
     | "variant5"
     | "variant6"
-    | "variant7"; // Add the new variant7 here
+    | "variant7";
   style?: React.CSSProperties;
   children: React.ReactNode;
-  gridHeight?: string; // Ensure this prop is available here
+  gridHeight?: string;
+  gap?: keyof typeof spacingMap;
 }
 
 const variant1GridAreas = [
@@ -34,40 +36,24 @@ const variant3GridAreas = [
   "1 / 3 / 3 / 4",
 ];
 
-const variant4GridAreas = [
-  "1 / 1 / 2 / 2", // div1
-  "1 / 2 / 2 / 4", // div2
-];
+const variant4GridAreas = ["1 / 1 / 2 / 2", "1 / 2 / 2 / 4"];
 
-const variant5GridAreas = [
-  "1 / 1 / 2 / 3", // div1
-  "1 / 3 / 2 / 4", // div2
-];
+const variant5GridAreas = ["1 / 1 / 2 / 3", "1 / 3 / 2 / 4"];
 
-const variant6GridAreas = [
-  "1 / 1 / 3 / 3", // div1
-  "1 / 3 / 2 / 4", // div2
-  "2 / 3 / 3 / 4", // div3
-];
+const variant6GridAreas = ["1 / 1 / 3 / 3", "1 / 3 / 2 / 4", "2 / 3 / 3 / 4"];
 
 const variant7GridAreas = [
-  "1 / 1 / 3 / 2", // div1
-  "1 / 2 / 2 / 3", // div2
-  "2 / 2 / 3 / 3", // div3
-  "2 / 3 / 3 / 4", // div4
-  "1 / 3 / 2 / 4", // div5
+  "1 / 1 / 3 / 2",
+  "1 / 2 / 2 / 3",
+  "2 / 2 / 3 / 3",
+  "2 / 3 / 3 / 4",
+  "1 / 3 / 2 / 4",
 ];
 
 const GridContainer = styled(Box)<{
-  variant:
-    | "variant1"
-    | "variant2"
-    | "variant3"
-    | "variant4"
-    | "variant5"
-    | "variant6"
-    | "variant7";
+  variant: GridProps["variant"];
   gridHeight?: string;
+  gap: keyof typeof spacingMap;
 }>`
   display: grid;
   width: 100%;
@@ -81,10 +67,10 @@ const GridContainer = styled(Box)<{
         : props.variant === "variant3"
           ? "repeat(2, 1fr)"
           : props.variant === "variant6" || props.variant === "variant7"
-            ? "repeat(2, 1fr)" // Distribute height evenly among 2 rows for variant6 and variant7
+            ? "repeat(2, 1fr)"
             : "1fr"};
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: ${(props) => spacingMap[props.gap]};
+  grid-row-gap: ${(props) => spacingMap[props.gap]};
   overflow: hidden;
 `;
 
@@ -95,7 +81,7 @@ const GridItem = styled(Box)<{ area: string }>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100%; /* Ensure that each grid item takes the full height of its area */
+  height: 100%;
 
   > * {
     width: 100%;
@@ -107,7 +93,7 @@ const GridItem = styled(Box)<{ area: string }>`
 
   img {
     width: 100%;
-    height: 100%; /* Ensure image takes full height */
+    height: 100%;
     object-fit: cover;
   }
 `;
@@ -116,7 +102,8 @@ const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
   variant = "variant1",
   style,
   children,
-  gridHeight, // Accept gridHeight prop
+  gridHeight,
+  gap = "SpacingSpacing1",
 }) => {
   const gridAreas =
     variant === "variant1"
@@ -131,10 +118,15 @@ const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
               ? variant5GridAreas
               : variant === "variant6"
                 ? variant6GridAreas
-                : variant7GridAreas; // Use variant7GridAreas for variant7
+                : variant7GridAreas;
 
   return (
-    <GridContainer variant={variant} style={style} gridHeight={gridHeight}>
+    <GridContainer
+      variant={variant}
+      style={style}
+      gridHeight={gridHeight}
+      gap={gap}
+    >
       {React.Children.map(children, (child, index) => (
         <GridItem key={index} area={gridAreas[index % gridAreas.length]}>
           {child}
