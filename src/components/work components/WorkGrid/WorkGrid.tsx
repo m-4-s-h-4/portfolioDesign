@@ -152,15 +152,10 @@ const WorkGrid: React.FC = () => {
   return (
     <Container>
       <Container
-        paddingLeftRight="SpacingSpacing2"
+        paddingLeftRight="SpacingSpacing6"
         paddingTopBottom="SpacingSpacing2"
       >
-        <Flex
-          direction="row"
-          xAlign="space-between"
-          yAlign="center"
-          gap="SpacingSpacing2"
-        >
+        <Flex direction="row" xAlign="space-between" yAlign="center">
           <Heading level="h4" color="dark" align="center">
             work
           </Heading>
