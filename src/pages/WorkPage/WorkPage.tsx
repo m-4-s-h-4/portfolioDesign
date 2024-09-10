@@ -17,7 +17,7 @@ const WorkPage: React.FC = () => {
         <Heading level="display" color="light">
           LOGO ANIMATION
         </Heading>
-        <ImagesLayout variant="variant2" variant2Height="60vh">
+        <ImagesLayout variant="variant2">
           <img
             src="https://dvtk.us/media/pages/projects/swiss-design-awards-2021/aa6a065d1a-1652190519/sda-key-visual_02.png"
             alt="Image 1"
