@@ -4,12 +4,14 @@ import { TextColorDark, TextColorLight } from "../../../../tokens/js/variables";
 import { spacingMap } from "../../../../utils/spacingMap";
 
 type ParagraphAlignment = "left" | "center";
+type TextTransform = "none" | "uppercase";
 
 export interface ParagraphProps {
   align?: ParagraphAlignment;
   color?: "dark" | "light";
   paddingTop?: keyof typeof spacingMap;
   paddingBottom?: keyof typeof spacingMap;
+  textTransform?: TextTransform;
   style?: React.CSSProperties;
   children: React.ReactNode;
 }
@@ -24,6 +26,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
   color = "dark",
   paddingTop = "SpacingSpacing0",
   paddingBottom = "SpacingSpacing0",
+  textTransform = "uppercase",
   style,
   children,
 }) => {
@@ -40,6 +43,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
         textAlign,
         paddingTop: paddingTopValue,
         paddingBottom: paddingBottomValue,
+        textTransform,
         ...style,
       }}
     >

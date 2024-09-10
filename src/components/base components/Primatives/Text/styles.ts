@@ -106,7 +106,6 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: BodyFontWeight,
     fontSize: BodyFontSize,
     letterSpacing: BodyLetterSpacing,
-    textTransform: BodyTextCase as React.CSSProperties["textTransform"],
   },
   note: {
     margin: 0,

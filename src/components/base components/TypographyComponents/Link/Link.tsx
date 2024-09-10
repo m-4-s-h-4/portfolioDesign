@@ -2,6 +2,7 @@ import React from "react";
 import Text from "../../Primatives/Text/Text";
 import { TextColorDark, TextColorLight } from "../../../../tokens/js/variables";
 import { spacingMap } from "../../../../utils/spacingMap";
+import styles from "./Link.module.css";
 
 type LinkProps = {
   href: string;
@@ -54,13 +55,14 @@ const Link: React.FC<LinkProps> = ({
         ...style,
       }}
     >
-      <a
-        href={href}
-        target={target}
-        rel={rel}
-        style={{ color: "inherit", textDecoration: "none" }}
-      >
+      <a href={href} target={target} rel={rel} className={styles.link}>
         {children}
+        <span
+          className={styles.underline}
+          style={{
+            backgroundColor: textColor,
+          }}
+        />
       </a>
     </Text>
   );
