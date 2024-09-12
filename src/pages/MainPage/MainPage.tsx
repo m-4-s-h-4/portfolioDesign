@@ -1,4 +1,3 @@
-import React from "react";
 import { Element, Link } from "react-scroll";
 import About from "../../sections/About/About";
 import Footer from "../../sections/Footer/Footer";
