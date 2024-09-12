@@ -31,7 +31,7 @@ interface ServiceProps {
 }
 
 const ServiceWrapper = styled.div`
-  border-top: 1px solid ${TextColorDark};
+  border-top: 0.5px solid ${TextColorDark};
   padding-top: 1rem;
   width: 100%;
 `;

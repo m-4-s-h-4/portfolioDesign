@@ -24,7 +24,6 @@ export interface ImagesLayoutProps {
 const PaddedContainer = styled.div<{ paddingTopBottom: string }>`
   padding-top: ${(props) => props.paddingTopBottom};
   padding-bottom: ${(props) => props.paddingTopBottom};
-  height: 100%; /* Ensure it takes full height */
 `;
 
 const StyledImage = styled.img<{ height?: string }>`
@@ -32,12 +31,12 @@ const StyledImage = styled.img<{ height?: string }>`
   height: ${(props) => props.height || "auto"};
   display: block;
   object-fit: cover;
+  border-radius: 10px;
 `;
 
 const FullWidthImage = styled(Box)<{ height?: string }>`
   width: 100%;
-  height: ${(props) =>
-    props.height || "100%"}; /* Ensure it takes full height */
+  height: ${(props) => props.height || "100%"};
 `;
 
 const GridContainerWithHeight = styled(Grid)<{ gridHeight?: string }>`

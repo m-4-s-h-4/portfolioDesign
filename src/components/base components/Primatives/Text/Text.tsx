@@ -81,10 +81,19 @@ const Text = <
       }
       switch (as) {
         case "h2":
-          mediaStyle.fontSize = "8vw";
+          mediaStyle.fontSize = "5vw";
+          break;
+        case "h3":
+          mediaStyle.fontSize = "5vw";
+          break;
+        case "h4":
+          mediaStyle.fontSize = "3.5vw";
+          break;
+        case "note":
+          mediaStyle.fontSize = "2.2vw";
           break;
         case "body":
-          mediaStyle.fontSize = "2.4vw";
+          mediaStyle.fontSize = "2vw";
           break;
         default:
           break;
@@ -94,7 +103,16 @@ const Text = <
     if (isPhoneScreen) {
       switch (as) {
         case "h2":
-          mediaStyle.fontSize = "6vw";
+          mediaStyle.fontSize = "8vw";
+          break;
+        case "h3":
+          mediaStyle.fontSize = "8vw";
+          break;
+        case "h4":
+          mediaStyle.fontSize = "4.5vw";
+          break;
+        case "note":
+          mediaStyle.fontSize = "4vw";
           break;
         case "body":
           mediaStyle.fontSize = "3.4vw";

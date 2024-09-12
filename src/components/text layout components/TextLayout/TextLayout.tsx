@@ -16,6 +16,8 @@ interface TextLayoutProps {
   paragraphs?: string[];
   headings?: string[];
   paddingTopBottom?: keyof typeof spacingMap;
+  alignItems?: "flex-start" | "center" | "baseline" | "flex-end";
+  textTransform?: "none" | "uppercase" | "lowercase" | "capitalize";
 }
 
 const PaddedContainer = styled.div<{
@@ -29,21 +31,35 @@ const renderers = {
   HeadingLParagraphR: ({
     headingText,
     paragraphText,
-  }: Pick<TextLayoutProps, "headingText" | "paragraphText">) => (
-    <Grid variant="variant4">
+    alignItems = "flex-start",
+    textTransform = "none",
+  }: Pick<
+    TextLayoutProps,
+    "headingText" | "paragraphText" | "alignItems" | "textTransform"
+  >) => (
+    <Grid variant="variant4" style={{ alignItems }}>
       <Heading level="h2" color="dark">
         {headingText}
       </Heading>
-      <Paragraph align="left" color="dark">
+      <Paragraph align="left" color="dark" style={{ textTransform }}>
         {paragraphText}
       </Paragraph>
     </Grid>
   ),
 
-  ThreeParagraph: ({ paragraphs }: Pick<TextLayoutProps, "paragraphs">) => (
-    <Grid variant="variant2">
+  ThreeParagraph: ({
+    paragraphs,
+    alignItems = "flex-start",
+    textTransform = "none",
+  }: Pick<TextLayoutProps, "paragraphs" | "alignItems" | "textTransform">) => (
+    <Grid variant="variant2" style={{ alignItems }}>
       {paragraphs?.map((text, index) => (
-        <Paragraph key={index} align="left" color="dark">
+        <Paragraph
+          key={index}
+          align="left"
+          color="dark"
+          style={{ textTransform }}
+        >
           {text}
         </Paragraph>
       ))}
@@ -53,14 +69,19 @@ const renderers = {
   HeadingWithThreeParagraph: ({
     headings,
     paragraphs,
-  }: Pick<TextLayoutProps, "headings" | "paragraphs">) => (
-    <Grid variant="variant2">
+    alignItems = "flex-start",
+    textTransform = "none",
+  }: Pick<
+    TextLayoutProps,
+    "headings" | "paragraphs" | "alignItems" | "textTransform"
+  >) => (
+    <Grid variant="variant2" style={{ alignItems }}>
       {paragraphs?.map((text, index) => (
         <Stack key={index} direction="vertical" gap="SpacingSpacing2">
-          <Heading level="h3" color="dark">
+          <Heading level="h2" color="dark">
             {headings?.[index] || `Heading ${index + 1}`}
           </Heading>
-          <Paragraph align="left" color="dark">
+          <Paragraph align="left" color="dark" style={{ textTransform }}>
             {text}
           </Paragraph>
         </Stack>
@@ -73,6 +94,8 @@ const TextLayout: React.FC<TextLayoutProps> = (props) => {
   const {
     variant,
     paddingTopBottom = "SpacingSpacing2", // Default padding for top and bottom
+    alignItems = "flex-start", // Default alignment
+    textTransform = "none", // Default text-transform
   } = props;
 
   const paddingTopBottomValue = spacingMap[paddingTopBottom];
@@ -80,7 +103,7 @@ const TextLayout: React.FC<TextLayoutProps> = (props) => {
 
   return Renderer ? (
     <PaddedContainer paddingTopBottom={paddingTopBottomValue}>
-      {Renderer(props)}
+      {Renderer({ ...props, alignItems, textTransform })}
     </PaddedContainer>
   ) : null;
 };

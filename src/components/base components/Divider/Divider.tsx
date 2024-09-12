@@ -19,7 +19,7 @@ const Divider: React.FC<DividerProps> = ({
   return (
     <hr
       style={{
-        border: `1px solid ${TextColorDark}`,
+        border: `0.5px solid ${TextColorDark}`,
         marginTop: paddingTopBottomValue,
         marginBottom: paddingTopBottomValue,
         marginLeft: paddingLeftRightValue,

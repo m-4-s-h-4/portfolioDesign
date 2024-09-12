@@ -25,6 +25,7 @@ const Image = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 10px;
 `;
 
 const renderers = {
@@ -62,7 +63,7 @@ const renderers = {
         <Heading level="h2" color="dark">
           {headingText}
         </Heading>
-        <Paragraph align="left" color="dark">
+        <Paragraph align="left" color="dark" textTransform="none">
           {paragraphText}
         </Paragraph>
       </Stack>

@@ -11,7 +11,6 @@ const SliderContainer = styled.div`
 
 const Slide = styled(motion.div)<{ size: { width: string; height: string } }>`
   position: absolute;
-  border-radius: 10px;
   background-size: cover;
   background-position: center;
   mix-blend-mode: multiply; /* Apply blend mode */
@@ -19,7 +18,7 @@ const Slide = styled(motion.div)<{ size: { width: string; height: string } }>`
   height: ${(props) => props.size.height};
 `;
 
-const AnimLanding: React.FC = () => {
+const LandingSlider: React.FC = () => {
   const images = [
     "https://i.pinimg.com/originals/44/04/20/4404205a930010b2d073543ebd9565c8.gif",
     "https://i.pinimg.com/originals/57/26/e8/5726e8700bf60b88f553f162e21ed96a.gif",
@@ -27,10 +26,10 @@ const AnimLanding: React.FC = () => {
     "https://i.pinimg.com/originals/b2/55/96/b2559659bddb30934adadfb0b8ac24b8.gif",
     "https://i.pinimg.com/originals/de/e1/94/dee194956c8842fe9217cbfb11083584.gif",
   ];
-  // start
+
   const directions = [
     { x: "-100vw", y: "0vh" }, // From the left
-    { x: "-15vw", y: "-90vh" }, // From the right
+    { x: "100vw", y: "0vh" }, // From the right
     { x: "0vw", y: "-100vh" }, // From the top
     { x: "0vw", y: "100vh" }, // From the bottom
     { x: "100vw", y: "100vh" }, // From the bottom-right
@@ -40,7 +39,7 @@ const AnimLanding: React.FC = () => {
     { x: "3vw", y: "20vh" }, // Top-left
     { x: "25vw", y: "10vh" }, // Top-right
     { x: "20vw", y: "50vh" }, // Bottom-left
-    { x: "63vw", y: "50vh" }, // Bottom-right
+    { x: "60vw", y: "50vh" }, // Bottom-right
     { x: "55vw", y: "5vh" }, // Center
   ];
 
@@ -63,11 +62,10 @@ const AnimLanding: React.FC = () => {
       opacity: 1,
       x: targetPositions[index].x,
       y: targetPositions[index].y,
-      rotate: index * 5,
+      rotate: index * 5, // Add a slight rotation for each image
       transition: {
-        duration: 1.5,
+        duration: 0.1,
         ease: "easeInOut",
-        delay: index * 0.7,
       },
     }),
   };
@@ -91,4 +89,4 @@ const AnimLanding: React.FC = () => {
   );
 };
 
-export default AnimLanding;
+export default LandingSlider;

@@ -9,6 +9,7 @@ import { fetchWork, Work } from "../../../utils/fetchWork/fetchWork";
 import CategoryList from "../Category/Category";
 import Flex from "../../base components/LayoutComponents/Flex/Flex";
 import Heading from "../../base components/TypographyComponents/Heading/Heading";
+import Box from "../../base components/Primatives/Box/Box";
 
 const fadeIn = keyframes`
   from {
@@ -41,16 +42,18 @@ const TransitionContainer = styled.div<{ isVisible: boolean }>`
 const Thumbnail = styled.img`
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 
-const FullWidthThumbnailContainer = styled.div`
+const FullWidthThumbnailContainer = styled(Box)`
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
 `;
 
 const FullWidthThumbnail = styled.img`
@@ -151,10 +154,7 @@ const WorkGrid: React.FC = () => {
 
   return (
     <Container>
-      <Container
-        paddingLeftRight="SpacingSpacing6"
-        paddingTopBottom="SpacingSpacing2"
-      >
+      <Container paddingTopBottom="SpacingSpacing2">
         <Flex direction="row" xAlign="space-between" yAlign="center">
           <Heading level="h4" color="dark" align="center">
             work

@@ -47,6 +47,7 @@ import {
 const styles: Record<string, React.CSSProperties> = {
   display: {
     margin: 0,
+    padding: 0,
     fontFamily: DisplayHeadingMainFontFamily,
     fontWeight: DisplayHeadingMainFontWeight,
     lineHeight: DisplayHeadingMainLineHeight,

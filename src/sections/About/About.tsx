@@ -34,11 +34,10 @@ const About: React.FC = () => {
   return (
     <Container
       height="auto"
-      paddingLeftRight="SpacingSpacing6"
       paddingTopBottom="SpacingSpacing10"
       direction="row"
     >
-      <Grid variant="variant5" gridHeight="auto" gap="SpacingSpacing6">
+      <Grid variant="variant5" gridHeight="auto" gap="SpacingSpacing4">
         <Stack gap="SpacingSpacing3" ref={ref}>
           <Heading level="h2" color="dark" align="left">
             {textLines.map((line, index) => (
@@ -73,7 +72,7 @@ const About: React.FC = () => {
               visible: {
                 width: "100%",
                 height: "20rem",
-                borderRadius: "40px",
+                borderRadius: "10px",
                 transition: {
                   duration: 1.5, // Increased duration for smoother animation
                   ease: [0.42, 0, 0.58, 1], // Smoother cubic-bezier curve

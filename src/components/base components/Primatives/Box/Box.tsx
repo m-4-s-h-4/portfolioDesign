@@ -15,6 +15,10 @@ interface BoxProps {
   justifyContent?: "flex-start" | "flex-end" | "center";
   height?: string;
   borderRadius?: string;
+  borderLeft?: boolean;
+  borderRight?: boolean;
+  borderTop?: boolean;
+  borderBottom?: boolean;
 }
 
 const Box = styled.div<BoxProps>`
@@ -33,7 +37,17 @@ const Box = styled.div<BoxProps>`
   display: ${(props) => (props.displayFlex ? "flex" : "block")};
   align-items: ${(props) => props.alignItems || "stretch"};
   justify-content: ${(props) => props.justifyContent || "flex-start"};
-  border-radius: ${(props) => props.borderRadius || "0"}; // Border radius added
+  border-radius: ${(props) => props.borderRadius || "0"};
+  ${(props) => props.borderLeft && `border-left: 1px solid black;`};
+  ${(props) => props.borderRight && `border-right: 1px solid black;`};
+  ${(props) => props.borderTop && `border-top: 1px solid black;`};
+  ${(props) => props.borderBottom && `border-bottom: 1px solid black;`};
+  ${(props) =>
+    props.displayFlex &&
+    `
+    flex-direction: column;
+    justify-content: flex-end;
+  `};
 `;
 
 export default Box;

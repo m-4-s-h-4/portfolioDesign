@@ -13,6 +13,7 @@ export interface ContainerProps {
   paddingTopBottom?: keyof typeof spacingMap;
   paddingLeftRight?: keyof typeof spacingMap;
   direction?: "row" | "column";
+  enableResponsivePadding?: boolean; // New prop to enable/disable responsive padding
   children: React.ReactNode;
 }
 
@@ -22,6 +23,7 @@ const StyledContainer = styled(Box)<{
   paddingTopBottom: string;
   paddingLeftRight: string;
   flexDirection: string;
+  enableResponsivePadding: boolean; // Pass prop to control media queries
 }>`
   height: ${(props) => props.containerHeight};
   width: 100%;
@@ -33,6 +35,20 @@ const StyledContainer = styled(Box)<{
   padding-bottom: ${(props) => props.paddingTopBottom};
   padding-left: ${(props) => props.paddingLeftRight};
   padding-right: ${(props) => props.paddingLeftRight};
+
+  ${(props) =>
+    props.enableResponsivePadding &&
+    `
+    @media (max-width: 1145px) {
+      padding-left: ${spacingMap["SpacingSpacing2"]};
+      padding-right: ${spacingMap["SpacingSpacing2"]};
+    }
+
+    @media (max-width: 768px) {
+      padding-left: ${spacingMap["SpacingSpacing1"]};
+      padding-right: ${spacingMap["SpacingSpacing1"]};
+    }
+  `}
 `;
 
 const Container: React.FC<ContainerProps> = ({
@@ -41,6 +57,7 @@ const Container: React.FC<ContainerProps> = ({
   paddingTopBottom = "SpacingSpacing0",
   paddingLeftRight = "SpacingSpacing0",
   direction = "column",
+  enableResponsivePadding = false, // Default to false (no responsive padding)
   children,
 }) => {
   const bgColor =
@@ -55,6 +72,7 @@ const Container: React.FC<ContainerProps> = ({
       paddingTopBottom={paddingTopBottomValue}
       paddingLeftRight={paddingLeftRightValue}
       flexDirection={direction}
+      enableResponsivePadding={enableResponsivePadding} // Pass prop to enable/disable responsive padding
     >
       {children}
     </StyledContainer>

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Box from "../../Primatives/Box/Box";
+
 import { spacingMap } from "../../../../utils/spacingMap";
+import Box from "../../Primatives/Box/Box";
 
 export interface GridProps {
   variant?:
@@ -58,7 +59,7 @@ const GridContainer = styled(Box)<{
   display: grid;
   width: 100%;
   height: ${(props) => props.gridHeight || "auto"};
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
   grid-template-rows: ${(props) =>
     props.variant === "variant1"
       ? "repeat(3, 1fr)"
@@ -68,10 +69,328 @@ const GridContainer = styled(Box)<{
           ? "repeat(2, 1fr)"
           : props.variant === "variant6" || props.variant === "variant7"
             ? "repeat(2, 1fr)"
-            : "1fr"};
+            : props.variant === "variant5"
+              ? "auto auto"
+              : "1fr"};
   grid-column-gap: ${(props) => spacingMap[props.gap]};
   grid-row-gap: ${(props) => spacingMap[props.gap]};
   overflow: hidden;
+
+  @media (max-width: 1145px) {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-rows: auto; /* 2 rows */
+
+    ${(props) =>
+      props.variant === "variant5" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2; /* First item in the first column */
+        grid-row: 1 / 2; /* First row */
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3; /* Second item in the second column */
+        grid-row: 1 / 2; /* First row */
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 3; /* Third item spans both columns */
+        grid-row: 2 / 3; /* Second row */
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant1" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      & > :nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
+
+      & > :nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant2" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant3" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant4" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant6" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant7" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+      }
+    `}
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: auto auto;
+
+    ${(props) =>
+      props.variant === "variant5" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2; /* First item in the first column */
+        grid-row: 1 / 2; /* First row */
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2; /* Second item in the first column */
+        grid-row: 2 / 3; /* Second row */
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2; /* Third item in the first column */
+        grid-row: 3 / 4; /* Third row */
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant1" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+      }
+
+      & > :nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+      }
+
+      & > :nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant2" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant3" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant4" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant6" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+    `}
+
+    ${(props) =>
+      props.variant === "variant7" &&
+      `
+      & > :nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+      }
+    `}
+  }
 `;
 
 const GridItem = styled(Box)<{ area: string }>`
@@ -81,10 +400,11 @@ const GridItem = styled(Box)<{ area: string }>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100%;
+  height: 100%; /* Ensure GridItem takes full height */
 
   > * {
     width: 100%;
+    height: 100%; /* Ensure children take full height */
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
